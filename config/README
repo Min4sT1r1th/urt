@@ -3,6 +3,13 @@ Here is some more information on the configuration process.
 
 The configuration symbols defined in config/urt are
 
+
+
+
+
+Displays :
+
+
 AMIGA	Define this if you have an Amiga and want display programs.
 	The programs getami and show3 will be compiled.  See the
 	README file in get/getami.  The Makefile in this directory
@@ -82,6 +89,12 @@ X11	Define this if you want a display program for the X Window
 	can be left blank if so).  The value of INCX11 should be in
 	the form -Idir, or blank.
 
+
+
+
+Conversion programs :
+
+
 ABEKASA60	Define this to get "rletoabA60", a program that
 	converts RLE files into Abekas A60 digital video disk format.
 
@@ -156,6 +169,13 @@ WASATCH	Define this to get "wasatchtorle" conversion from Wasatch
 WAVEFRONT	Define this to get "rlatorle" and "rletorla"
 	conversions between RLE and Wavefront's RLA and RLB formats.
 
+
+
+
+
+Control C compilation flags :
+
+
 APOLLOCC	Adds C compiler flags for an Apollo workstation.   At
 	the moment, this is a no-op.
 
@@ -181,12 +201,21 @@ SUNCC	Adds C compiler flags for a Sun-3 workstation.  Specifically,
 
 386IXCC	Adds compiler flags for the Interactive systems 386/ix.
 
+
+
 ExtraCFLAGS	A Make variable that can be used to supply extra flags
 	to the C compiler.  This might be used to refer to another
 	system include directory, or to give flags like '-ansi' to the
 	Gnu C compiler.  Ideally, instead of using this variable, you
 	would add another '#define xxxCC' symbol and add the
 	appropriate flags to makefile.hdr with '#ifadd xxxCC MachFLAGS ...'
+
+
+
+
+
+System specific or configuration parameters :
+
 
 ABEKAS_PAL	Define this to generate PAL format files for the
 	Abekas A60.
@@ -289,6 +318,10 @@ VOID_STAR	If your C compiler understands the 'void *' type,
 USE_XLIBINT_H	If you have the file "Xlibint.h" in your X11 include
 	directory (usually /usr/include/X11), define this.
 
+
+
+
+
 Some path and make variables are also defined here.  Paths that start
 with a / are considered absolute paths and are used unchanged.
 Otherwise, the path is treated as relative to the "root" of the URT
@@ -335,6 +368,10 @@ ROFFPIPE	A pipeline to send the output of ROFF to in order to
 
 OTHERJUNK	Files that will be removed whenever you 'make clean'.
 
+
+
+
+
 ****************************************************************
 The configuration process takes the files config/urt (or your own, if
 you specify one), makefile.hdr, dir/makefile.src, and makefile.tlr,
@@ -377,7 +414,7 @@ include/rle_config.tlr:  This file is concatenated to the end of the
 	this is the place to change it.  See the definition of
 	CONST_DECL in this file, for example.  This is also the place
 	to define symbols that depend on others (see XLIBINT_H).
-
+
 Local Variables:
 fill-prefix: "\t"
 End:
